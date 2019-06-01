@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EP_GO_BACK" xml:space="preserve">
+    <value>Geri Dön</value>
+  </data>
+  <data name="EP_INTERNAL_SERVER_ERROR" xml:space="preserve">
+    <value>İç Sunucu Hatası</value>
+  </data>
+  <data name="EP_PAGE_NOT_FOUND" xml:space="preserve">
+    <value>Sayfa Bulunamadı</value>
+  </data>
+  <data name="EP_THIS_PAGE_HAVE_BEEN_REMOVED" xml:space="preserve">
+    <value>BU SAYFA KALDIRILMIŞ</value>
+  </data>
+  <data name="EP_UNEXPECTED_ERROR_OCCURED" xml:space="preserve">
+    <value>BEKLENMEDİK BİR HATA OLUŞTU</value>
+  </data>
+  <data name="LP_ABOUT" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="LP_ALWAYS_SECURE" xml:space="preserve">
+    <value>Her Zaman Güvenli</value>
+  </data>
+  <data name="LP_ALWAYS_SECURE_CONTEXT" xml:space="preserve">
+    <value>Mailleriniz ve mesajlarınız üçüncü şahıslarla paylaşılmadan yönetici-çalışan arasında her daim güvenli iletişim sağlar.</value>
+  </data>
+  <data name="LP_ANY_QUESTION_SENTENCE" xml:space="preserve">
+    <value>Herhangi bir sorunuz mu var? Direkt iletişime geçin.</value>
+  </data>
+  <data name="LP_BACK_TO_TOP" xml:space="preserve">
+    <value>Başa dön</value>
+  </data>
+  <data name="LP_BANNER_CONTEXT" xml:space="preserve">
+    <value>Çalışanlarınızın çalışma saatlerini otomatik shift uygulaması ile hazırlayarak zamanı daha verimli kullanın</value>
+  </data>
+  <data name="LP_BANNER_HEADER_1" xml:space="preserve">
+    <value>Çalışanlarınızla </value>
+  </data>
+  <data name="LP_BANNER_HEADER_2" xml:space="preserve">
+    <value>Tek Bir Uygulamadan İletişim Kurun</value>
+  </data>
+  <data name="LP_BLOG" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="LP_CHAT" xml:space="preserve">
+    <value>Mesajlaşma</value>
+  </data>
+  <data name="LP_CHAT_CONTEXT" xml:space="preserve">
+    <value>Yönetici ile çalışanların tek bir uygulama içerisinde hızlıca iletişim kurabilmelerini sağlar.</value>
+  </data>
+  <data name="LP_COPYRIGHT" xml:space="preserve">
+    <value>Tüm hakları saklıdır.</value>
+  </data>
+  <data name="LP_CREATE" xml:space="preserve">
+    <value>Oluştur</value>
+  </data>
+  <data name="LP_CREATE_CONTEXT" xml:space="preserve">
+    <value>İsteğinize bağlı manuel veya otomatik bir şekilde çalışanlarınız için shift oluşturun.</value>
+  </data>
+  <data name="LP_DOWNLOAD_THE_APP" xml:space="preserve">
+    <value>UYGULAMAYI İNDİRİN</value>
+  </data>
+  <data name="LP_DOWNLOAD_THE_APP_NOW" xml:space="preserve">
+    <value>Uygulamayı Hemen İndirin!</value>
+  </data>
+  <data name="LP_EMAIL" xml:space="preserve">
+    <value>E-Posta</value>
+  </data>
+  <data name="LP_EMAIL_ADRESS" xml:space="preserve">
+    <value>Email Adresi</value>
+  </data>
+  <data name="LP_EMAIL_CONTEXT" xml:space="preserve">
+    <value>Tek bir uygulama ile kurumsal E-postalarınızı iletmenizi sağlar.</value>
+  </data>
+  <data name="LP_FASTER" xml:space="preserve">
+    <value>Hızlı.</value>
+  </data>
+  <data name="LP_FASTER_CONTEXT" xml:space="preserve">
+    <value>Tek tıkla haftalık çalışma programını hazırlar ve anında erişim sağlar.</value>
+  </data>
+  <data name="LP_FEATURES" xml:space="preserve">
+    <value>Özellikler</value>
+  </data>
+  <data name="LP_HOME" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="LP_HOW_THE_APP_WORKS" xml:space="preserve">
+    <value>Uygulama Nasıl Çalışır?</value>
+  </data>
+  <data name="LP_INTRO" xml:space="preserve">
+    <value>Intro</value>
+  </data>
+  <data name="LP_LETS_STAY_IN_TOUCH" xml:space="preserve">
+    <value>Arayı Soğutmayalım.</value>
+  </data>
+  <data name="LP_LETS_STAY_IN_TOUCH_CONTENT" xml:space="preserve">
+    <value>Güncellemeler, özel teklifler ve daha fazlası için abone olun.</value>
+  </data>
+  <data name="LP_MANAGE" xml:space="preserve">
+    <value>Yönet</value>
+  </data>
+  <data name="LP_MANAGEABLE" xml:space="preserve">
+    <value>Yönetilebilir.</value>
+  </data>
+  <data name="LP_MANAGEABLE_CONTEXT" xml:space="preserve">
+    <value>Çalışan giriş çıkışları, izinleri vs. gibi birçok olayı kontrol etmek daha kolay hale gelir.</value>
+  </data>
+  <data name="LP_MANAGE_CONTEXT" xml:space="preserve">
+    <value>Bilgisayar, tablet ve mobil cihazlarınızdan dilediğiniz zamanda ve dilediğiniz yerden işletmenizi yönetin.</value>
+  </data>
+  <data name="LP_MEMBERSHIP" xml:space="preserve">
+    <value>İhtiyacınıza Göre Üyelik Seçenekleri</value>
+  </data>
+  <data name="LP_MEMBERSHIP_CONTENT" xml:space="preserve">
+    <value>İhtiyaç ve isteklerinize göre biçimlendirilen üyelik paketlerimizi 3 aylık deneme paketi şeklinde ya da 1 yıllık, 5 yılllık, 10 yıllık paketler şeklinde satın alabilirsiniz.</value>
+  </data>
+  <data name="LP_NOTIFICATION" xml:space="preserve">
+    <value>Bildirimler</value>
+  </data>
+  <data name="LP_NOTIFICATION_CONTEXT" xml:space="preserve">
+    <value>Anında paylaştığınız verilerden, tablolardan, taslaklardan bildirimler sayesinde haberiniz olur.</value>
+  </data>
+  <data name="LP_PRICING" xml:space="preserve">
+    <value>Ücretlendirme</value>
+  </data>
+  <data name="LP_SCROLL_DOWN" xml:space="preserve">
+    <value>Aşağı Kaydırın</value>
+  </data>
+  <data name="LP_SECURE" xml:space="preserve">
+    <value>Güvenli.</value>
+  </data>
+  <data name="LP_SECURE_CONTEXT" xml:space="preserve">
+    <value>Çalışan ve yöneticilerin bilgilerini saklı tutar. Kişisel ve şirket verilerinin korunması ilkesiyle çalışır.</value>
+  </data>
+  <data name="LP_SHARE" xml:space="preserve">
+    <value>Paylaş</value>
+  </data>
+  <data name="LP_SHARE_CONTEXT" xml:space="preserve">
+    <value>Tek tıkla tüm duyurularınızı çalışanlarınızla anında paylaşın.</value>
+  </data>
+  <data name="LP_SIGN_IN" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="LP_SIGN_IN_CONTEXT" xml:space="preserve">
+    <value>Sistem tarafından oluşturulmuş bilgilerinizle hızlıca sisteme giriş yapın.</value>
+  </data>
+  <data name="LP_SMART" xml:space="preserve">
+    <value>Akıllı.</value>
+  </data>
+  <data name="LP_SMART_CONTEXT" xml:space="preserve">
+    <value>Birden fazla parametreyi kullanarak sizin gibi düşünür ve ona göre shift hazırlar.</value>
+  </data>
+  <data name="LP_SUBSCRIBE" xml:space="preserve">
+    <value>Abone Ol</value>
+  </data>
+  <data name="LP_SUPPORT" xml:space="preserve">
+    <value>7/24 Destek</value>
+  </data>
+  <data name="LP_SUPPORT_CONTENT" xml:space="preserve">
+    <value>7/24 sistemsel sorunlarınızı çözümlüyor ve size yardımcı olmak için mail ve canlı destek hattından yardımcı oluyoruz. Ayrıca sisteminizi güncel tutarak gerekli bakım ve onarımları gerçekleştiriyoruz.</value>
+  </data>
+  <data name="LP_SURELY_LOVE_FEATURES" xml:space="preserve">
+    <value>Kesinlikle Seveceğiniz Özellikler ile Hazırlandı.</value>
+  </data>
+  <data name="LP_SURELY_LOVE_FEATURES_CONTEXT" xml:space="preserve">
+    <value>Yönetici ve çalışanların hızlı bir şekilde entegre olmasını sağlayarak iş planlama performansının üst düzeyde tutulmasını sağlar. Değişen plan veya duyurulardan anında  haberiniz olur.</value>
+  </data>
+  <data name="LP_THE_MOST_POPULAR_SHIFTER_APP" xml:space="preserve">
+    <value>En Popüler Ve 1 Numaralı Shift Uygulaması</value>
+  </data>
+  <data name="LP_THE_MOST_POPULAR_SHIFTER_APP_CONTEXT" xml:space="preserve">
+    <value>Kullandıkça zamanınızı daha verimli, yönetilebilir ve çalışanlarınızın iş için sürekli kullandığı bir platforma sahip olacaksınız.</value>
+  </data>
+  <data name="LP_USER_FRIENDLY" xml:space="preserve">
+    <value>Kullanıcı Dostu.</value>
+  </data>
+  <data name="LP_USER_FRIENDLY_CONTEXT" xml:space="preserve">
+    <value>Basit kullanıcı arayüzleri ile kolay öğrenilip istenilen her yerden ulaşılarak kullanılabilir.</value>
+  </data>
+  <data name="PROJECT_NAME" xml:space="preserve">
+    <value>Shifter and Worker.</value>
+  </data>
+</root>

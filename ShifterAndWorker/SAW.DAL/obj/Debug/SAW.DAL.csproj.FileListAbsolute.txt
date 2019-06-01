@@ -1,0 +1,12 @@
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Debug\SAW.DAL.dll.config
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Debug\SAW.DAL.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Debug\SAW.DAL.pdb
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Debug\SAW.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Debug\SAW.DAL.csproj.CopyComplete
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Debug\SAW.DAL.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Debug\SAW.DAL.pdb
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Debug\SAW.DAL.csprojAssemblyReference.cache

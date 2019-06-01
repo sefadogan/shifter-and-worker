@@ -1,0 +1,62 @@
+﻿
+@using SAW.Model.ViewModel
+@model VMAnnouncementDetail
+
+@{
+    ViewBag.Title = "Detail Announcement";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin: 100px 50px;">
+    <div class="go-back-list">
+        <a href="/Panel/Announcement/List" class="btn btn-sm btn-dark"><i class="fa fa-arrow-left"> </i>&nbsp;Back to List</a>
+    </div>
+    <div class="header">
+        <h1>
+            <strong>Detail</strong> Announcement
+            @if (Model.IsImportant)
+            {
+                <span class="badge badge-danger">IMPORTANT</span>
+            }
+        </h1>
+        <hr />
+    </div>
+    <div class="row">
+        @if (TempData["ProcessResult"] != null)
+        {
+            <div class="alert alert-@TempData["AlertType"]" role="alert">
+                @TempData["ProcessResult"].ToString()
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+        <div class="col-lg-12">
+            <div class="row m-t-10">
+                <div class="col-md-12">
+                    <p>
+                        @Html.DisplayFor(x => x.Title)
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <p>
+                        @Html.DisplayFor(x => x.Body)
+                    </p>
+                </div>
+
+                @if (Model.CreatorUser.Role.Name == "Manager")
+                {
+                    <div class="col-md-12">
+                        <p>
+                            Created by :
+                            @Html.DisplayFor(x => x.CreatorUser.FirstName)
+                            @Html.DisplayFor(x => x.CreatorUser.LastName)
+                        </p>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

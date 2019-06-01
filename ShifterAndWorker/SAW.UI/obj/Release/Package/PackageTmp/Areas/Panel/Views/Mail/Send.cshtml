@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Send";
+    Layout = "~/Areas/Panel/Views/Shared/_LayoutMail.cshtml";
+}
+
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content page-app mailbox mailbox-send">
+    
+    <section class="app">
+        <div class="email-details">
+            <section>
+                <a class="btn btn-xs btn-dark" href="/Panel/Mail/Inbox"><i class="fa fa-arrow-circle-left"></i> Back To List</a>
+                @if (TempData["ProcessResult"] != null)
+                {
+                    <div class="alert alert-@TempData["AlertType"]" role="alert">
+                        @TempData["ProcessResult"].ToString()
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
+                <h1><strong>Write</strong> an email</h1>
+                <div class="email-details-inner withScroll" data-height="window" data-padding="200">
+                    @using (Html.BeginForm("Send", "Mail", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="m-t-10">
+                            <input class="form-control form-white" name="email" type="email" placeholder="Email" autofocus />
+                        </div>
+                        <div class="m-t-10">
+                            <input class="form-control form-white" name="subject" type="text" placeholder="Subject" autocomplete="off" />
+                        </div>
+                        <div class="m-t-10">
+                            <textarea class="form-control form-white" name="body" rows="15" placeholder="Your message"></textarea>
+                        </div>
+                        <div class="write-answer m-t-10">
+                            <input class="btn btn-primary" type="submit" value="Send" />
+                        </div>
+                    }
+                </div>
+            </section>
+        </div>
+    </section>
+    <div class="footer">
+        <div class="copyright">
+            <p class="pull-left sm-pull-reset">
+                <span>Copyright <span class="copyright">©</span> 2016 </span>
+                <span>THEMES LAB</span>.
+                <span>All rights reserved. </span>
+            </p>
+            <p class="pull-right sm-pull-reset">
+                <span><a href="#" class="m-r-10">Support</a> | <a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT -->

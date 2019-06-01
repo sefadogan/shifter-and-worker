@@ -1,0 +1,8 @@
+﻿@using PagedList.Mvc
+@using SAW.DAL.Context
+
+@model PagedList.IPagedList<User>
+
+<div class="pagination small">
+    @Html.PagedListPager(Model, Page => Url.Action("/List/" + Model[0].UserId, new { Page = Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+</div>

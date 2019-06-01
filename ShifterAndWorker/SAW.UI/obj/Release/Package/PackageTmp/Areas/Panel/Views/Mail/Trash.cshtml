@@ -1,0 +1,78 @@
+﻿
+@using SAW.Model.ViewModel
+@model VMMailDeleted
+
+@{
+    ViewBag.Title = "Trash";
+    Layout = "~/Areas/Panel/Views/Shared/_LayoutMail.cshtml";
+}
+
+ <!--BEGIN PAGE CONTENT -->
+<div class="page-content page-thin">
+    @if (TempData["ProcessResult"] != null)
+    {
+        <div class="alert alert-@TempData["AlertType"]" role="alert">
+            @TempData["ProcessResult"].ToString()
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3><i class="fa fa-table"></i> <strong>Trash</strong></h3>
+            <div class="panel-content">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-md-1"></th>
+                            <th class="col-md-2">Name</th>
+                            <th class="col-md-2">Subject</th>
+                            <th class="col-md-2">Time Sent</th>
+                            <th class="col-md-5"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var mail in Model.Mails)
+                        {
+                            <tr>
+                                <td class="col-md-1">
+                                    <img src="~/Areas/Panel/assets/global/images/avatars/avatar4_big.png" alt="avatar 3" width="40" class="sender-img">
+                                </td>
+                                <td>@mail.User.FirstName @mail.User.LastName</td>
+                                <td>@mail.Subject</td>
+                                <td>@mail.CreateDate</td>
+                                <td style="text-align:right">
+                                    <a class="btn btn-sm btn-default" href="/Panel/Mail/MoveDeletedMailToInbox/@mail.MailId"><i class="fa fa-arrow-circle-left"></i> Take it Back</a>
+                                    <a class="edit btn btn-sm btn-default" href="/Panel/Mail/Detail/@mail.MailId" data-rel="tooltip" data-original-title="Detail"><i class="icon-note"></i></a>
+                                    <button class="delete btn btn-sm btn-danger" onclick="permanentDeleteMail(@mail.MailId)" data-rel="tooltip" data-original-title="Permanent Delete"><i class="icons-office-52"></i></button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function permanentDeleteMail(mailId) {
+        if (confirm("Are you sure want to delete this mail as permanent? ")) {
+            $.ajax({
+                url: "/Panel/Mail/PermanentDelete",
+                type: "POST",
+                data: { id: mailId },
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.message)
+                        location.reload();
+                    }
+                    else
+                        $("#postResult").addClass("alert-danger").append(data.message).show();
+                }
+            });
+        }
+    };
+</script>
+<!-- END PAGE CONTENT -->

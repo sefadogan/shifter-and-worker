@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShifterAndWorkerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ShifterAndWorkerEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ShifterAndWorkerModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ShifterAndWorkerModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Addresses" EntityType="ShifterAndWorkerModel.Address" />
+    <EntitySet Name="Announcements" EntityType="ShifterAndWorkerModel.Announcement" />
+    <EntitySet Name="Breaks" EntityType="ShifterAndWorkerModel.Break" />
+    <EntitySet Name="Companies" EntityType="ShifterAndWorkerModel.Company" />
+    <EntitySet Name="Departments" EntityType="ShifterAndWorkerModel.Department" />
+    <EntitySet Name="Mails" EntityType="ShifterAndWorkerModel.Mail" />
+    <EntitySet Name="Messages" EntityType="ShifterAndWorkerModel.Message" />
+    <EntitySet Name="Notifications" EntityType="ShifterAndWorkerModel.Notification" />
+    <EntitySet Name="Posts" EntityType="ShifterAndWorkerModel.Post" />
+    <EntitySet Name="Provinces" EntityType="ShifterAndWorkerModel.Province" />
+    <EntitySet Name="Regions" EntityType="ShifterAndWorkerModel.Region" />
+    <EntitySet Name="Roles" EntityType="ShifterAndWorkerModel.Role" />
+    <EntitySet Name="ShiftBreaks" EntityType="ShifterAndWorkerModel.ShiftBreak" />
+    <EntitySet Name="Shifts" EntityType="ShifterAndWorkerModel.Shift" />
+    <EntitySet Name="StoreDepartments" EntityType="ShifterAndWorkerModel.StoreDepartment" />
+    <EntitySet Name="Stores" EntityType="ShifterAndWorkerModel.Store" />
+    <EntitySet Name="Tasks" EntityType="ShifterAndWorkerModel.Task" />
+    <EntitySet Name="Towns" EntityType="ShifterAndWorkerModel.Town" />
+    <EntitySet Name="UserAnnouncements" EntityType="ShifterAndWorkerModel.UserAnnouncement" />
+    <EntitySet Name="UserNotifications" EntityType="ShifterAndWorkerModel.UserNotification" />
+    <EntitySet Name="Users" EntityType="ShifterAndWorkerModel.User" />
+    <EntitySet Name="UserShifts" EntityType="ShifterAndWorkerModel.UserShift" />
+    <EntitySet Name="WorkingTypes" EntityType="ShifterAndWorkerModel.WorkingType" />
+    <AssociationSet Name="FK_Stores_Addresses" Association="ShifterAndWorkerModel.FK_Stores_Addresses">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAnnouncements_Announcements" Association="ShifterAndWorkerModel.FK_UserAnnouncements_Announcements">
+      <End Role="Announcement" EntitySet="Announcements" />
+      <End Role="UserAnnouncement" EntitySet="UserAnnouncements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShiftBreaks_Breaks" Association="ShifterAndWorkerModel.FK_ShiftBreaks_Breaks">
+      <End Role="Break" EntitySet="Breaks" />
+      <End Role="ShiftBreak" EntitySet="ShiftBreaks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stores_Companies" Association="ShifterAndWorkerModel.FK_Stores_Companies">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shifts_Departments" Association="ShifterAndWorkerModel.FK_Shifts_Departments">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Shift" EntitySet="Shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreDepartments_Departments" Association="ShifterAndWorkerModel.FK_StoreDepartments_Departments">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="StoreDepartment" EntitySet="StoreDepartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Departments" Association="ShifterAndWorkerModel.FK_Users_Departments">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mails_Users" Association="ShifterAndWorkerModel.FK_Mails_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Mail" EntitySet="Mails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users" Association="ShifterAndWorkerModel.FK_Messages_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserNotifications_Notifications" Association="ShifterAndWorkerModel.FK_UserNotifications_Notifications">
+      <End Role="Notification" EntitySet="Notifications" />
+      <End Role="UserNotification" EntitySet="UserNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_Users" Association="ShifterAndWorkerModel.FK_Posts_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provinces_Regions" Association="ShifterAndWorkerModel.FK_Provinces_Regions">
+      <End Role="Region" EntitySet="Regions" />
+      <End Role="Province" EntitySet="Provinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Towns_Provinces" Association="ShifterAndWorkerModel.FK_Towns_Provinces">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="Town" EntitySet="Towns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="ShifterAndWorkerModel.FK_Users_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShiftBreaks_Shifts" Association="ShifterAndWorkerModel.FK_ShiftBreaks_Shifts">
+      <End Role="Shift" EntitySet="Shifts" />
+      <End Role="ShiftBreak" EntitySet="ShiftBreaks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserShifts_Shifts" Association="ShifterAndWorkerModel.FK_UserShifts_Shifts">
+      <End Role="Shift" EntitySet="Shifts" />
+      <End Role="UserShift" EntitySet="UserShifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreDepartments_Stores" Association="ShifterAndWorkerModel.FK_StoreDepartments_Stores">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="StoreDepartment" EntitySet="StoreDepartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Stores" Association="ShifterAndWorkerModel.FK_Users_Stores">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Users" Association="ShifterAndWorkerModel.FK_Tasks_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAnnouncements_Users" Association="ShifterAndWorkerModel.FK_UserAnnouncements_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserAnnouncement" EntitySet="UserAnnouncements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserNotifications_Users" Association="ShifterAndWorkerModel.FK_UserNotifications_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserNotification" EntitySet="UserNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_WorkingTypes" Association="ShifterAndWorkerModel.FK_Users_WorkingTypes">
+      <End Role="WorkingType" EntitySet="WorkingTypes" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserShifts_Users" Association="ShifterAndWorkerModel.FK_UserShifts_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserShift" EntitySet="UserShifts" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddressType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="Int32" Nullable="false" />
+    <Property Name="ProvinceId" Type="Int32" Nullable="false" />
+    <Property Name="TownId" Type="Int32" Nullable="false" />
+    <Property Name="RegionId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Stores" Relationship="ShifterAndWorkerModel.FK_Stores_Addresses" FromRole="Address" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="AnnouncementId" />
+    </Key>
+    <Property Name="AnnouncementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsImportant" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserAnnouncements" Relationship="ShifterAndWorkerModel.FK_UserAnnouncements_Announcements" FromRole="Announcement" ToRole="UserAnnouncement" />
+  </EntityType>
+  <EntityType Name="Break">
+    <Key>
+      <PropertyRef Name="BreakId" />
+    </Key>
+    <Property Name="BreakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ShiftBreaks" Relationship="ShifterAndWorkerModel.FK_ShiftBreaks_Breaks" FromRole="Break" ToRole="ShiftBreak" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Stores" Relationship="ShifterAndWorkerModel.FK_Stores_Companies" FromRole="Company" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentDepartmentId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RootLevel" Type="Byte" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="MaxEmployees" Type="Int32" />
+    <Property Name="MinEmployees" Type="Int16" />
+    <NavigationProperty Name="Shifts" Relationship="ShifterAndWorkerModel.FK_Shifts_Departments" FromRole="Department" ToRole="Shift" />
+    <NavigationProperty Name="StoreDepartments" Relationship="ShifterAndWorkerModel.FK_StoreDepartments_Departments" FromRole="Department" ToRole="StoreDepartment" />
+    <NavigationProperty Name="Users" Relationship="ShifterAndWorkerModel.FK_Users_Departments" FromRole="Department" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Mail">
+    <Key>
+      <PropertyRef Name="MailId" />
+    </Key>
+    <Property Name="MailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsRead" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsPermanentDelete" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeleteDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SenderId" Type="Int32" Nullable="false" />
+    <Property Name="ReceiverId" Type="Int32" Nullable="false" />
+    <Property Name="ParentMailId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="ShifterAndWorkerModel.FK_Mails_Users" FromRole="Mail" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Message1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsRead" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReadDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeleteDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SenderId" Type="Int32" Nullable="false" />
+    <Property Name="ReceiverId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="ShifterAndWorkerModel.FK_Messages_Users" FromRole="Message" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsRead" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="UserNotifications" Relationship="ShifterAndWorkerModel.FK_UserNotifications_Notifications" FromRole="Notification" ToRole="UserNotification" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="ShifterAndWorkerModel.FK_Posts_Users" FromRole="Post" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceId" />
+    </Key>
+    <Property Name="ProvinceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RegionId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Region" Relationship="ShifterAndWorkerModel.FK_Provinces_Regions" FromRole="Province" ToRole="Region" />
+    <NavigationProperty Name="Towns" Relationship="ShifterAndWorkerModel.FK_Towns_Provinces" FromRole="Province" ToRole="Town" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionId" />
+    </Key>
+    <Property Name="RegionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Provinces" Relationship="ShifterAndWorkerModel.FK_Provinces_Regions" FromRole="Region" ToRole="Province" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="ShifterAndWorkerModel.FK_Users_Roles" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ShiftBreak">
+    <Key>
+      <PropertyRef Name="ShiftBreakId" />
+    </Key>
+    <Property Name="ShiftBreakId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BreakId" Type="Int32" Nullable="false" />
+    <Property Name="ShiftId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Break" Relationship="ShifterAndWorkerModel.FK_ShiftBreaks_Breaks" FromRole="ShiftBreak" ToRole="Break" />
+    <NavigationProperty Name="Shift" Relationship="ShifterAndWorkerModel.FK_ShiftBreaks_Shifts" FromRole="ShiftBreak" ToRole="Shift" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="ShiftId" />
+    </Key>
+    <Property Name="ShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="ShifterAndWorkerModel.FK_Shifts_Departments" FromRole="Shift" ToRole="Department" />
+    <NavigationProperty Name="ShiftBreaks" Relationship="ShifterAndWorkerModel.FK_ShiftBreaks_Shifts" FromRole="Shift" ToRole="ShiftBreak" />
+    <NavigationProperty Name="UserShifts" Relationship="ShifterAndWorkerModel.FK_UserShifts_Shifts" FromRole="Shift" ToRole="UserShift" />
+  </EntityType>
+  <EntityType Name="StoreDepartment">
+    <Key>
+      <PropertyRef Name="StoreDepartmentId" />
+    </Key>
+    <Property Name="StoreDepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="ShifterAndWorkerModel.FK_StoreDepartments_Departments" FromRole="StoreDepartment" ToRole="Department" />
+    <NavigationProperty Name="Store" Relationship="ShifterAndWorkerModel.FK_StoreDepartments_Stores" FromRole="StoreDepartment" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaxNumberEmployees" Type="Byte" />
+    <Property Name="MinNumberEmployees" Type="Byte" />
+    <Property Name="OpeningTime" Type="Time" Precision="7" />
+    <Property Name="ClosingTime" Type="Time" Precision="7" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AddressId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="ShifterAndWorkerModel.FK_Stores_Addresses" FromRole="Store" ToRole="Address" />
+    <NavigationProperty Name="Company" Relationship="ShifterAndWorkerModel.FK_Stores_Companies" FromRole="Store" ToRole="Company" />
+    <NavigationProperty Name="StoreDepartments" Relationship="ShifterAndWorkerModel.FK_StoreDepartments_Stores" FromRole="Store" ToRole="StoreDepartment" />
+    <NavigationProperty Name="Users" Relationship="ShifterAndWorkerModel.FK_Users_Stores" FromRole="Store" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDone" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CompleteDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatorId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="ShifterAndWorkerModel.FK_Tasks_Users" FromRole="Task" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Town">
+    <Key>
+      <PropertyRef Name="TownId" />
+    </Key>
+    <Property Name="TownId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProvinceId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Province" Relationship="ShifterAndWorkerModel.FK_Towns_Provinces" FromRole="Town" ToRole="Province" />
+  </EntityType>
+  <EntityType Name="UserAnnouncement">
+    <Key>
+      <PropertyRef Name="UserAnnouncementId" />
+    </Key>
+    <Property Name="UserAnnouncementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="AnnouncementId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Announcement" Relationship="ShifterAndWorkerModel.FK_UserAnnouncements_Announcements" FromRole="UserAnnouncement" ToRole="Announcement" />
+    <NavigationProperty Name="User" Relationship="ShifterAndWorkerModel.FK_UserAnnouncements_Users" FromRole="UserAnnouncement" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserNotification">
+    <Key>
+      <PropertyRef Name="UserNotificationId" />
+    </Key>
+    <Property Name="UserNotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="NotificationId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Notification" Relationship="ShifterAndWorkerModel.FK_UserNotifications_Notifications" FromRole="UserNotification" ToRole="Notification" />
+    <NavigationProperty Name="User" Relationship="ShifterAndWorkerModel.FK_UserNotifications_Users" FromRole="UserNotification" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="About" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+    <Property Name="SupervisorId" Type="Int32" Nullable="false" />
+    <Property Name="WorkingTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ImageUrl" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Department" Relationship="ShifterAndWorkerModel.FK_Users_Departments" FromRole="User" ToRole="Department" />
+    <NavigationProperty Name="Mails" Relationship="ShifterAndWorkerModel.FK_Mails_Users" FromRole="User" ToRole="Mail" />
+    <NavigationProperty Name="Messages" Relationship="ShifterAndWorkerModel.FK_Messages_Users" FromRole="User" ToRole="Message" />
+    <NavigationProperty Name="Posts" Relationship="ShifterAndWorkerModel.FK_Posts_Users" FromRole="User" ToRole="Post" />
+    <NavigationProperty Name="Role" Relationship="ShifterAndWorkerModel.FK_Users_Roles" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="Store" Relationship="ShifterAndWorkerModel.FK_Users_Stores" FromRole="User" ToRole="Store" />
+    <NavigationProperty Name="Tasks" Relationship="ShifterAndWorkerModel.FK_Tasks_Users" FromRole="User" ToRole="Task" />
+    <NavigationProperty Name="UserAnnouncements" Relationship="ShifterAndWorkerModel.FK_UserAnnouncements_Users" FromRole="User" ToRole="UserAnnouncement" />
+    <NavigationProperty Name="UserNotifications" Relationship="ShifterAndWorkerModel.FK_UserNotifications_Users" FromRole="User" ToRole="UserNotification" />
+    <NavigationProperty Name="WorkingType" Relationship="ShifterAndWorkerModel.FK_Users_WorkingTypes" FromRole="User" ToRole="WorkingType" />
+    <NavigationProperty Name="UserShifts" Relationship="ShifterAndWorkerModel.FK_UserShifts_Users" FromRole="User" ToRole="UserShift" />
+  </EntityType>
+  <EntityType Name="UserShift">
+    <Key>
+      <PropertyRef Name="UserShiftId" />
+    </Key>
+    <Property Name="UserShiftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ShiftId" Type="Int32" Nullable="false" />
+    <Property Name="IsAccepted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Shift" Relationship="ShifterAndWorkerModel.FK_UserShifts_Shifts" FromRole="UserShift" ToRole="Shift" />
+    <NavigationProperty Name="User" Relationship="ShifterAndWorkerModel.FK_UserShifts_Users" FromRole="UserShift" ToRole="User" />
+  </EntityType>
+  <EntityType Name="WorkingType">
+    <Key>
+      <PropertyRef Name="WorkingTypeId" />
+    </Key>
+    <Property Name="WorkingTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="MaxWorkingHours" Type="Byte" Nullable="false" />
+    <Property Name="MinWorkingHours" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="ShifterAndWorkerModel.FK_Users_WorkingTypes" FromRole="WorkingType" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Stores_Addresses">
+    <End Type="ShifterAndWorkerModel.Address" Role="Address" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Store" Role="Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAnnouncements_Announcements">
+    <End Type="ShifterAndWorkerModel.Announcement" Role="Announcement" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.UserAnnouncement" Role="UserAnnouncement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Announcement">
+        <PropertyRef Name="AnnouncementId" />
+      </Principal>
+      <Dependent Role="UserAnnouncement">
+        <PropertyRef Name="AnnouncementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShiftBreaks_Breaks">
+    <End Type="ShifterAndWorkerModel.Break" Role="Break" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.ShiftBreak" Role="ShiftBreak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Break">
+        <PropertyRef Name="BreakId" />
+      </Principal>
+      <Dependent Role="ShiftBreak">
+        <PropertyRef Name="BreakId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stores_Companies">
+    <End Type="ShifterAndWorkerModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Store" Role="Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyId" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shifts_Departments">
+    <End Type="ShifterAndWorkerModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Shift" Role="Shift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="Shift">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreDepartments_Departments">
+    <End Type="ShifterAndWorkerModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.StoreDepartment" Role="StoreDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="StoreDepartment">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Departments">
+    <End Type="ShifterAndWorkerModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mails_Users">
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Mail" Role="Mail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Mail">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users">
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Message" Role="Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserNotifications_Notifications">
+    <End Type="ShifterAndWorkerModel.Notification" Role="Notification" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.UserNotification" Role="UserNotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Notification">
+        <PropertyRef Name="NotificationId" />
+      </Principal>
+      <Dependent Role="UserNotification">
+        <PropertyRef Name="NotificationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_Users">
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provinces_Regions">
+    <End Type="ShifterAndWorkerModel.Region" Role="Region" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Province" Role="Province" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionId" />
+      </Principal>
+      <Dependent Role="Province">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Towns_Provinces">
+    <End Type="ShifterAndWorkerModel.Province" Role="Province" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Town" Role="Town" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ProvinceId" />
+      </Principal>
+      <Dependent Role="Town">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Type="ShifterAndWorkerModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShiftBreaks_Shifts">
+    <End Type="ShifterAndWorkerModel.Shift" Role="Shift" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.ShiftBreak" Role="ShiftBreak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shift">
+        <PropertyRef Name="ShiftId" />
+      </Principal>
+      <Dependent Role="ShiftBreak">
+        <PropertyRef Name="ShiftId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserShifts_Shifts">
+    <End Type="ShifterAndWorkerModel.Shift" Role="Shift" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.UserShift" Role="UserShift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shift">
+        <PropertyRef Name="ShiftId" />
+      </Principal>
+      <Dependent Role="UserShift">
+        <PropertyRef Name="ShiftId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreDepartments_Stores">
+    <End Type="ShifterAndWorkerModel.Store" Role="Store" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.StoreDepartment" Role="StoreDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="StoreDepartment">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Stores">
+    <End Type="ShifterAndWorkerModel.Store" Role="Store" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tasks_Users">
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.Task" Role="Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAnnouncements_Users">
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.UserAnnouncement" Role="UserAnnouncement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserAnnouncement">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserNotifications_Users">
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.UserNotification" Role="UserNotification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserNotification">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_WorkingTypes">
+    <End Type="ShifterAndWorkerModel.WorkingType" Role="WorkingType" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingType">
+        <PropertyRef Name="WorkingTypeId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="WorkingTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserShifts_Users">
+    <End Type="ShifterAndWorkerModel.User" Role="User" Multiplicity="1" />
+    <End Type="ShifterAndWorkerModel.UserShift" Role="UserShift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserShift">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

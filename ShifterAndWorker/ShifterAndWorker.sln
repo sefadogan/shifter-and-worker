@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAW.UI", "SAW.UI\SAW.UI.csproj", "{DD8DCCDA-CFEB-4576-95FC-B8A83B5009E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAW.BLL", "SAW.BLL\SAW.BLL.csproj", "{93F1B432-8F51-4B52-A39F-0DFB5E7AE3CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAW.DAL", "SAW.DAL\SAW.DAL.csproj", "{4A055D20-D784-4119-84C7-EF2C49CBB852}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAW.Model", "SAW.Model\SAW.Model.csproj", "{EF70E60B-F841-4444-BD53-6E83A8F98CAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAW.Core", "SAW.Core\SAW.Core.csproj", "{A7F29B63-8FAB-442E-BAA2-8C66326626E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAW.WebApi", "SAW.WebApi\SAW.WebApi.csproj", "{92BCB186-2B18-4CB1-A9EA-63E1D404C9F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD8DCCDA-CFEB-4576-95FC-B8A83B5009E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD8DCCDA-CFEB-4576-95FC-B8A83B5009E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD8DCCDA-CFEB-4576-95FC-B8A83B5009E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD8DCCDA-CFEB-4576-95FC-B8A83B5009E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F1B432-8F51-4B52-A39F-0DFB5E7AE3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F1B432-8F51-4B52-A39F-0DFB5E7AE3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F1B432-8F51-4B52-A39F-0DFB5E7AE3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F1B432-8F51-4B52-A39F-0DFB5E7AE3CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A055D20-D784-4119-84C7-EF2C49CBB852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A055D20-D784-4119-84C7-EF2C49CBB852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A055D20-D784-4119-84C7-EF2C49CBB852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A055D20-D784-4119-84C7-EF2C49CBB852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF70E60B-F841-4444-BD53-6E83A8F98CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF70E60B-F841-4444-BD53-6E83A8F98CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF70E60B-F841-4444-BD53-6E83A8F98CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF70E60B-F841-4444-BD53-6E83A8F98CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F29B63-8FAB-442E-BAA2-8C66326626E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F29B63-8FAB-442E-BAA2-8C66326626E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F29B63-8FAB-442E-BAA2-8C66326626E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F29B63-8FAB-442E-BAA2-8C66326626E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92BCB186-2B18-4CB1-A9EA-63E1D404C9F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92BCB186-2B18-4CB1-A9EA-63E1D404C9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92BCB186-2B18-4CB1-A9EA-63E1D404C9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92BCB186-2B18-4CB1-A9EA-63E1D404C9F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDDDA623-F939-47D1-8352-20060BA35543}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/shifterandworker
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SAW.UI\\SAW.UI.csproj
+		SccProjectName1 = SAW.UI
+		SccLocalPath1 = SAW.UI
+		SccProjectUniqueName2 = SAW.BLL\\SAW.BLL.csproj
+		SccProjectName2 = SAW.BLL
+		SccLocalPath2 = SAW.BLL
+		SccProjectUniqueName3 = SAW.DAL\\SAW.DAL.csproj
+		SccProjectName3 = SAW.DAL
+		SccLocalPath3 = SAW.DAL
+		SccProjectUniqueName4 = SAW.Model\\SAW.Model.csproj
+		SccProjectName4 = SAW.Model
+		SccLocalPath4 = SAW.Model
+		SccProjectUniqueName5 = SAW.Core\\SAW.Core.csproj
+		SccProjectName5 = SAW.Core
+		SccLocalPath5 = SAW.Core
+		SccProjectUniqueName6 = SAW.WebApi\\SAW.WebApi.csproj
+		SccProjectName6 = SAW.WebApi
+		SccLocalPath6 = SAW.WebApi
+	EndGlobalSection
+EndGlobal

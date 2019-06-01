@@ -1,0 +1,110 @@
+﻿
+@using SAW.Model.ViewModel.Partials
+@model VMSideBarPartial
+
+<!-- BEGIN SIDEBAR -->
+<div class="sidebar">
+    <div class="logopanel">
+        <h1>
+            <a href="/Panel/Dashboard/Index"></a>
+        </h1>
+    </div>
+    <div class="sidebar-inner">
+        <div class="sidebar-top">
+            <div class="userlogged clearfix">
+                <i class="icon icons-faces-users-01"></i>
+                <div class="user-details">
+                    <h4>@Model.User.FirstName @Model.User.LastName</h4>
+                    <div class="dropdown user-login">
+                        <button class="btn btn-xs dropdown-toggle btn-rounded" type="button" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="300">
+                            <i class="online"></i><span>Available</span><i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="busy"></i><span>Busy</span></a></li>
+                            <li><a href="#"><i class="turquoise"></i><span>Invisible</span></a></li>
+                            <li><a href="#"><i class="away"></i><span>Away</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-title">
+            Navigation
+            <div class="pull-right menu-settings">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="300">
+                    <i class="icon-settings"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="reorder-menu" class="reorder-menu">Reorder menu</a></li>
+                    <li><a href="#" id="remove-menu" class="remove-menu">Remove elements</a></li>
+                    <li><a href="#" id="hide-top-sidebar" class="hide-top-sidebar">Hide / show user image</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="nav nav-sidebar">
+            <li><a href="/Panel/Dashboard/Index"><i class="octicon octicon-dashboard"></i><span>Dashboard</span></a></li>
+            <li class="nav-parent">
+                <a href=""><i class="icon-user"></i><span>Users</span><span class="fa arrow"></span></a>
+                <ul class="children collapse">
+                    <li><a href="/Panel/User/List"> List</a></li>
+                    <li><a href="/Panel/User/Create"> Create</a></li>
+                </ul>
+            </li>
+            <li class="nav-parent">
+                <a href=""><i class="icon-calendar"></i><span>Shifts</span><span class="fa arrow"></span></a>
+                <ul class="children collapse">
+                    <li><a href="/Panel/Shift/Create"> Create</a></li>
+                    <li><a href="/Panel/Shift/Preview"> Shift Preview</a></li>
+                    <li><a href="/Panel/Shift/WishList"> Wish Shift List</a></li>
+                </ul>
+            </li>
+            <li class="nav-parent">
+                <a href=""><i class="fa fa-bullhorn"></i><span>Announcements</span><span class="fa arrow"></span></a>
+                <ul class="children collapse">
+                    <li><a href="/Panel/Announcement/List"> List</a></li>
+                    <li><a href="/Panel/Announcement/Create"> Create</a></li>
+                </ul>
+            </li>
+            <li class="nav-parent">
+                <a href=""><i class="fa fa-building"></i><span>Departments</span><span class="fa arrow"></span></a>
+                <ul class="children collapse">
+                    <li><a href="/Panel/Department/List">  List</a></li>
+                    <li><a href="/Panel/Department/Create">  Create</a></li>
+                </ul>
+            </li>
+            <li><a href="/Report/Index"><i class="icon-layers"></i><span>Reports</span></a></li>
+            <li class="nav-parent">
+                <a href=""><i class="fa fa-envelope"></i><span>Mails</span><span class="fa arrow"></span></a>
+                <ul class="children collapse">
+                    <li>
+                        <a href="/Panel/Mail/Inbox">
+                            @if (Model.NumberOfMails > 0)
+                            {
+                                <span class="pull-right badge badge-primary">@Model.NumberOfMails</span>
+                            }
+                            Inbox
+                        </a>
+                    </li>
+                    <li><a href="/Panel/Mail/Send"> Send</a></li>
+                    <li><a href="/Panel/Mail/Trash"> Trash</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- SIDEBAR WIDGET FOLDERS -->
+        <div class="sidebar-footer clearfix">
+            <a class="pull-left footer-settings" href="#" data-rel="tooltip" data-placement="top" data-original-title="Settings">
+                <i class="icon-settings"></i>
+            </a>
+            <a class="pull-left toggle_fullscreen" href="#" data-rel="tooltip" data-placement="top" data-original-title="Fullscreen">
+                <i class="icon-size-fullscreen"></i>
+            </a>
+            <a class="pull-left" href="/Panel/Account/LockScreen" data-rel="tooltip" data-placement="top" data-original-title="Lockscreen">
+                <i class="icon-lock"></i>
+            </a>
+            <a class="pull-left btn-effect" href="/Panel/Account/Logout" data-modal="modal-1" data-rel="tooltip" data-placement="top" data-original-title="Logout">
+                <i class="icon-power"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- END SIDEBAR -->

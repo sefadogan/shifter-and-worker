@@ -1,0 +1,12 @@
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Release\SAW.DAL.dll.config
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Release\SAW.DAL.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Release\SAW.DAL.pdb
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Release\EntityFramework.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Release\EntityFramework.xml
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Release\SAW.DAL.csprojAssemblyReference.cache
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Release\SAW.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Release\SAW.DAL.csproj.CopyComplete
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Release\SAW.DAL.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.DAL\obj\Release\SAW.DAL.pdb

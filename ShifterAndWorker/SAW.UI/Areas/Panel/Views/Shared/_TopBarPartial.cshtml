@@ -1,0 +1,190 @@
+﻿
+@model SAW.Model.ViewModel.Partials.VMTopBarPartial
+
+<!-- BEGIN TOPBAR -->
+<div class="topbar">
+    <div class="header-left">
+        <div class="topnav">
+            <a class="menutoggle" href="#" data-toggle="sidebar-collapsed"><span class="menu__handle"><span>Menu</span></span></a>
+            <ul class="nav nav-icons">
+                <li><a href="#" class="toggle-sidebar-top"><span class="icon-user-following"></span></a></li>
+                <li><a href="/Panel/Mail/Inbox"><span class="octicon octicon-mail-read"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-right">
+        <ul class="header-menu nav navbar-nav">
+            <!-- BEGIN USER DROPDOWN -->
+            <li class="dropdown" id="language-header">
+                <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <i class="icon-globe"></i>
+                    <span>Language</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#" data-lang="en"><img src="~/Areas/Panel/assets/global/images/flags/Turkey.png" alt="flag-turkish"> <span>Turkish</span></a>
+                    </li>
+                    <li>
+                        <a href="#" data-lang="es"><img src="~/Areas/Panel/assets/global/images/flags/usa.png" alt="flag-american"> <span>English</span></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- END USER DROPDOWN -->
+            <!-- BEGIN ANNOUNCEMENT DROPDOWN -->
+            <li class="dropdown" id="notifications-header">
+                <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <i class="icon-bell"></i>
+                    @if (Model.NumberOfNewAnnouncements > 0)
+                    {
+                        <span class="badge badge-danger badge-header">
+                            @Model.NumberOfNewAnnouncements
+                        </span>
+                    }
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header clearfix">
+                        <p class="pull-left">You have @Model.UserAnnouncements.Count() Announcement(s)</p>
+                    </li>
+                    <li>
+                        <ul class="dropdown-menu-list withScroll" data-height="220">
+                            @{
+                                int countForNotification = 0;
+                                var maxAnnouncementToDisplay = Model.NumberOfNewAnnouncements + 3;
+                                foreach (var announcement in Model.UserAnnouncements)
+                                {
+                                    if (countForNotification == maxAnnouncementToDisplay)
+                                    {
+                                        break;
+                                    }
+
+                                    <li>
+                                        <a href="/Panel/Announcement/Detail/@announcement.AnnouncementId">
+                                            @announcement.Announcement.Body
+
+                                            @if (!announcement.IsRead)
+                                            {
+                                                <span class="fa fa-circle" aria-hidden="true" style="color:#c75757;"></span>
+                                            }
+
+                                            <span class="dropdown-time">
+                                                <span class="glyphicon glyphicon-time p-r-5"></span>
+                                                @announcement.Announcement.CreateDate.ToShortDateString() @announcement.Announcement.CreateDate.ToShortTimeString()
+                                            </span>
+                                        </a>
+                                    </li>
+                                    countForNotification++;
+                                }
+                            }
+
+                        </ul>
+                    </li>
+                    @if (Model.UserAnnouncements.Count() > 0)
+                    {
+                        <li class="dropdown-footer clearfix">
+                            <a href="/Panel/Announcement/List" class="pull-left">See all announcements</a>
+                        </li>
+                    }
+                </ul>
+            </li>
+            <!-- END ANNOUNCEMENT DROPDOWN -->
+            <!-- BEGIN MAILS DROPDOWN -->
+            <li class="dropdown" id="messages-header">
+                <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <i class="fa fa-envelope-o"></i>
+                    @if (Model.NumberOfNewMails > 0)
+                    {
+                        <span class="badge badge-primary badge-header">
+                            @Model.NumberOfNewMails
+                        </span>
+                    }
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header clearfix">
+                        <p class="pull-left">
+                            You have @Model.Mails.Count() Mail(s)
+                        </p>
+                    </li>
+                    <li class="dropdown-body">
+                        <ul class="dropdown-menu-list withScroll" data-height="220">
+                            @{
+                                int countForEmails = 0;
+                                var maxEmailToDisplay = Model.NumberOfNewMails + 3;
+                                foreach (var mail in Model.Mails)
+                                {
+                                    if (countForEmails == maxEmailToDisplay)
+                                    {
+                                        break;
+                                    }
+
+                                    <li class="clearfix">
+                                        <a href="/Panel/Mail/Detail/@mail.MailId">
+                                            <span class="pull-left p-r-5">
+                                                <img src="~/Areas/Panel/assets/global/images/avatars/avatar1.png" alt="avatar 1">
+                                            </span>
+                                            <div class="clearfix">
+                                                <div>
+                                                    <strong>@mail.User.FirstName @mail.User.LastName</strong>
+                                                    @if (!mail.IsRead)
+                                                    {
+                                                        <span class="fa fa-circle" aria-hidden="true" style="color:#319db5;"></span>
+                                                    }
+                                                    <small class="pull-right text-muted">
+                                                        <span class="glyphicon glyphicon-time p-r-5"></span>@mail.CreateDate
+                                                    </small>
+                                                </div>
+                                                <p>
+                                                    @mail.Subject.ToString().Substring(0, (mail.Subject.Length > 20) ? 20 : mail.Subject.Length)
+                                                    @if (mail.Body.Length > 20)
+                                                    {
+                                                        <span>...</span>
+                                                    }
+
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    countForEmails++;
+                                }
+                            }
+                        </ul>
+                    </li>
+                    @if (Model.Mails.Count() > 0)
+                    {
+                        <li class="dropdown-footer clearfix">
+                            <a href="/Panel/Mail/Inbox" class="pull-left">See all mails</a>
+                        </li>
+                    }
+                </ul>
+            </li>
+            <!-- END MAILS DROPDOWN -->
+            <!-- BEGIN USER DROPDOWN -->
+            <li class="dropdown" id="user-header">
+                <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <img src="~/Areas/Panel/assets/global/images/avatars/usericon2.png" alt="user icon2">
+                    <span class="username" id="user-full-name">@Model.LoggedUser.FirstName @Model.LoggedUser.LastName</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/Panel/User/PersonalProfile"><i class="icon-user"></i> <span>My Profile</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-calendar"></i> <span>My Shifts</span></a>
+                    </li>
+                    <li>
+                        <a href="/Panel/Note/List"><i class="icon-note"></i> <span>My Notes</span></a>
+                    </li>
+                    <li>
+                        <a href="/Panel/Account/Settings/@Model.LoggedUser.UserId"><i class="icon-settings"></i> <span>Account Settings</span></a>
+                    </li>
+                    <li>
+                        <a href="/Panel/Account/Logout"><i class="icon-logout"></i> <span>Logout</span></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- END USER DROPDOWN -->
+            <!-- CHAT BAR ICON -->
+            <li id="quickview-toggle"><a href="#"><i class="icon-bubbles"></i></a></li>
+        </ul>
+    </div><!-- header-right -->
+</div>
+<!-- END TOPBAR -->

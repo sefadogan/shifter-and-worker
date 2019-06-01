@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c9d0f6fbe83c41cc923b88b408623c56" Name="Diagram1">
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Address" Width="1.5" PointX="7.5" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Announcement" Width="1.5" PointX="17.25" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Break" Width="1.5" PointX="14.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Company" Width="1.5" PointX="7.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Department" Width="1.5" PointX="12" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Mail" Width="1.5" PointX="16.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Message" Width="1.5" PointX="16.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Notification" Width="1.5" PointX="17.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Post" Width="1.5" PointX="16.5" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Province" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Region" Width="1.5" PointX="0.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Role" Width="1.5" PointX="12" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.ShiftBreak" Width="1.5" PointX="16.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Shift" Width="1.5" PointX="14.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Store" Width="1.5" PointX="9.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Task" Width="1.5" PointX="16.5" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Town" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.UserAnnouncement" Width="1.5" PointX="19.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.UserNotification" Width="1.5" PointX="19.5" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.User" Width="1.5" PointX="14.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.WorkingType" Width="1.5" PointX="12" PointY="23.875" IsExpanded="true" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Addresses_Provinces" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Addresses_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Addresses_Towns" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Stores_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_UserAnnouncements_Announcements" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_ShiftBreaks_Breaks" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Stores_Companies" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Departments_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Shifts_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Users_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Mails_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Messages_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_UserNotifications_Notifications" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Posts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Provinces_Regions" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Towns_Provinces" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Roles_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_ShiftBreaks_Shifts" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Shifts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Users_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_WorkingTypes_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Tasks_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_UserAnnouncements_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_UserNotifications_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Users_WorkingTypes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ShifterAndWorkerModel.Note" Width="1.5" PointX="16.5" PointY="37.375" />
+        <AssociationConnector Association="ShifterAndWorkerModel.FK_Notes_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

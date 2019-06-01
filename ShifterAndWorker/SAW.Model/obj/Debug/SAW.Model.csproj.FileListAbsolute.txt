@@ -1,0 +1,12 @@
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\bin\Debug\SAW.Model.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\bin\Debug\SAW.Model.pdb
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\bin\Debug\SAW.DAL.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\bin\Debug\EntityFramework.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\bin\Debug\SAW.DAL.pdb
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\bin\Debug\SAW.DAL.dll.config
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\bin\Debug\EntityFramework.xml
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\obj\Debug\SAW.Model.csprojAssemblyReference.cache
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\obj\Debug\SAW.Model.csproj.CoreCompileInputs.cache
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\obj\Debug\SAW.Model.csproj.CopyComplete
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\obj\Debug\SAW.Model.dll
+C:\Users\Sefa DOGAN\source\repos\ShifterAndWorker\SAW.Model\obj\Debug\SAW.Model.pdb

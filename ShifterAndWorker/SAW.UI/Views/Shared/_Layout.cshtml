@@ -1,0 +1,159 @@
+﻿
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>@ViewBag.Title - Shifter and Worker</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex" />
+    <meta charset="utf-8" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/vendor.css">
+    <link rel="stylesheet" href="~/css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="~/js/modernizr.js"></script>
+    <script src="~/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="~/Areas/Panel/assets/global/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="~/Areas/Panel/assets/global/images/favicon.png" type="image/x-icon">
+
+</head>
+
+<body id="top">
+    <!-- START: Preloader -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+    <!-- END: Preloader -->
+
+    <!-- START: Header-->
+    <header class="s-header">
+        <div class="header-logo">
+            <a class="site-logo" href="#">
+                <img src="~/Areas/Panel/assets/global/images/logo/saw-logo-white.png" alt="Shifter and Worker Logo">
+            </a>
+        </div>
+        <nav class="row header-nav-wrap wide">
+            <ul class="header-main-nav">
+                <li class="current"><a class="smoothscroll" href="#home" title="intro">@MultiLanguage.Resource.LP_INTRO</a></li>
+                <li><a class="smoothscroll" href="#about" title="about">@MultiLanguage.Resource.LP_ABOUT</a></li>
+                <li><a class="smoothscroll" href="#features" title="features">@MultiLanguage.Resource.LP_FEATURES</a></li>
+                <li><a class="smoothscroll" href="#pricing" title="pricing">@MultiLanguage.Resource.LP_PRICING</a></li>
+                <li><a href="#" title="blog">@MultiLanguage.Resource.LP_BLOG</a></li>
+            </ul>
+            <ul class="header-social">
+                <li><a href="/Language/ChangeLanguage?language=tr">TR</a></li>
+                <li><a href="/Language/ChangeLanguage?language=en">EN</a></li>
+                <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="/Panel/Account/Login" style="width:100px; border-radius:7px;"><i class="fa fa-user" aria-hidden="true"> </i> @MultiLanguage.Resource.LP_SIGN_IN</a></li>
+            </ul>
+        </nav>
+        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
+    </header>
+    <!-- END: Header -->
+
+    @RenderBody();
+
+    <!-- START: Footer -->
+    <footer class="s-footer footer">
+
+        <div class="row footer__top">
+            <div class="col-six md-full">
+                <h1 class="display-2">
+                    @MultiLanguage.Resource.LP_LETS_STAY_IN_TOUCH
+                </h1>
+                <p class="lead">
+                    @MultiLanguage.Resource.LP_LETS_STAY_IN_TOUCH_CONTENT
+                </p>
+            </div>
+            <div class="col-six md-full footer__subscribe end">
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" novalidate="true">
+
+                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="@MultiLanguage.Resource.LP_EMAIL_ADRESS" required="">
+
+                        <input type="submit" name="subscribe" value="@MultiLanguage.Resource.LP_SUBSCRIBE">
+
+                        <label for="mc-email" class="subscribe-message"></label>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer__bottom">
+            <div class="col-five tab-full">
+                <div class="footer__logo">
+                    <a href="#">
+                        <img src="~/Areas/Panel/assets/global/images/logo/saw-logo-white.png" alt="Shifter and Worker logo">
+                    </a>
+                </div>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+
+                <ul class="footer__social">
+                    <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-six tab-full end">
+                <ul class="footer__site-links">
+                    <li><a class="smoothscroll" href="#home" title="intro">@MultiLanguage.Resource.LP_INTRO</a></li>
+                    <li><a class="smoothscroll" href="#about" title="about">@MultiLanguage.Resource.LP_ABOUT</a></li>
+                    <li><a class="smoothscroll" href="#features" title="features">@MultiLanguage.Resource.LP_FEATURES</a></li>
+                    <li><a class="smoothscroll" href="#pricing" title="pricing">@MultiLanguage.Resource.LP_PRICING</a></li>
+                    <li><a href="#" title="blog">@MultiLanguage.Resource.LP_BLOG</a></li>
+                </ul>
+
+                <p class="footer__contact">
+                    @MultiLanguage.Resource.LP_ANY_QUESTION_SENTENCE  <br>
+                    <a href="mailto:support@shifterandworker.com" class="footer__mail-link">support@shifterandworker.com</a>
+                </p>
+
+                <div class="cl-copyright">
+                    <span>
+                        Copyright &copy; @DateTime.Now.Year @MultiLanguage.Resource.PROJECT_NAME | @MultiLanguage.Resource.LP_COPYRIGHT
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="go-top">
+            <a class="smoothscroll" title="@MultiLanguage.Resource.LP_BACK_TO_TOP" href="#top"></a>
+        </div>
+
+    </footer>
+    <!-- END: Footer -->
+
+    <!-- START: Javascript -->
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/main.js"></script>
+    <!-- END: Javascript  -->
+</body>
+</html>

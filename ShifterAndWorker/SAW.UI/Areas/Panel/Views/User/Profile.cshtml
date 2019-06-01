@@ -1,0 +1,83 @@
+﻿
+@using SAW.Model.ViewModel
+@model UserProfileViewModel
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<!-- BEGIN PAGE CONTENT -->
+<div class="page-content page-app page-profil">
+    <div class="col-lg-10 col-md-9">
+        <div class="row profil-header">
+            <div class="col-lg-9 col-md-12">
+                <div class="row">
+                    <div class="col-xs-4 profil-img">
+                        <img src="~/Areas/Panel/assets/global/images/profil_page/profile-img.jpg" alt="profil">
+                    </div>
+                </div>
+                <div class="row header-name">
+                    <div class="col-md-9">
+                        <div class="name">@Model.User.FirstName @Model.User.LastName <i class="fa fa-check-circle"></i></div>
+                        <div class="profil-info"><i class="icon-present"></i>@Model.User.DateOfBirth.Value.ToShortDateString()</div>
+                        <div class="profil-info"><i class="icon-call-end"></i>@Model.User.Phone</div>
+                    </div>
+                    <div class="col-md-3 moments">
+                        <div class="num-moments c-primary countup" data-from="0" data-to="137" data-delay="2000" data-suffix="" data-duration="6">0</div>
+                        <div class="text-center">Total work hours</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profil-content">
+            <h2 class="m-l-10">Latest Posts</h2>
+            @{
+                foreach (var post in Model.PostList)
+                {
+                    <div class="row m-b-10 p-20" style="background-color:white;">
+                        <div class="col-md-12">
+                            <div class="col-md-10">
+                                @post.Body
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                if (TempData["ProcessResult"] != null)
+                {
+                    <div class="alert alert-@TempData["AlertType"]" role="alert">
+                        @TempData["ProcessResult"].ToString()
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-3 hidden-sm hidden-xs profil-right">
+        <div class="profil-sidebar-element">
+            <h3><strong>ABOUT</strong></h3>
+            <p>@Model.User.About</p>
+        </div>
+        <div class="profil-sidebar-element m-t-20">
+            <h3><strong>LAST SIGNIN</strong></h3>
+            <p class="c-gray m-t-0">
+                <i>@Model.User.LastLogin</i>
+            </p>
+        </div>
+        <div class="m-t-20">
+            <button type="button" class="btn btn-block btn-primary bd-0 no-bd"><i class="fa fa-envelope"></i> Send a Message</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">
+            <p class="pull-left sm-pull-reset">
+                <span>Copyright <span class="copyright">©</span> 2016 </span>
+                <span>THEMES LAB</span>.
+                <span>All rights reserved. </span>
+            </p>
+            <p class="pull-right sm-pull-reset">
+                <span><a href="#" class="m-r-10">Support</a> | <a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT -->

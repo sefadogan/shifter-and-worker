@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "500 " + MultiLanguage.Resource.EP_INTERNAL_SERVER_ERROR;
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+
+<div class="error-page">
+    <div class="error-page-type">
+        <h1>Oops!</h1>
+        <h2>500 - @MultiLanguage.Resource.EP_UNEXPECTED_ERROR_OCCURED</h2>
+    </div>
+    <a href="/">@MultiLanguage.Resource.EP_GO_BACK</a>
+</div>
+
